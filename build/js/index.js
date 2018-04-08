@@ -17,6 +17,24 @@ var $ = require("jquery"),
 	var _initListners = function() {   
 		var self = this; 
 
+		$("#swipe-place").on("dblclick", function(){
+			if($(this).hasClass("_blackSkin")) {
+				$(this).removeClass("_blackSkin").addClass("_whiteSkin");
+			} else {
+				$(this).addClass("_blackSkin").removeClass("_whiteSkin");
+			}
+		});
+		$("#swipe-place").on("hold", function(){
+			if($(this).hasClass("_blackSkin")) {
+				$(this).removeClass("_blackSkin").addClass("_whiteSkin");
+			} else {
+				$(this).addClass("_blackSkin").removeClass("_whiteSkin");
+			}
+		});
+
+
+
+
 		$("#swipe-place").on("swipeup", function(){
 			console.log("swipeUp")
 			self.checkExample('plus');
@@ -88,10 +106,11 @@ var $ = require("jquery"),
 	App.prototype.startGame = function() {
 		var self = this;
 		this.time = 60;
+		this.nextExample();
 		this.interval = setInterval(function(){
 			self.time -=1;
 			if(self.time < 0) {
-				alert(self.countSuccess);
+				alert("Ваш результат: " + self.countSuccess);
 				self.stopGame();
 			}
 		},1000);
