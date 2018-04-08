@@ -1,0 +1,729 @@
+  /*
+    
+    PRELOADER
+  
+  */
+
+
+  #loader-wrapper {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      background: rgba(255,255,255,0.5);
+      z-index: 100;
+
+  }
+
+    
+  #loader {
+      display: block;
+      position: fixed;
+
+
+      width: 150px;
+      height: 150px;
+      left:0px;
+      right: 0px;
+      top:0px;
+      bottom: 0px;
+      margin: auto auto;
+
+
+
+      
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #3498db;
+
+      -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+      animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+  }
+  #loader._absolute {
+    position: absolute;
+  }
+
+      #loader:before {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          right: 5px;
+          bottom: 5px;
+          border-radius: 50%;
+          border: 3px solid transparent;
+          border-top-color: #e74c3c;
+
+          -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+          animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+      }
+
+      #loader:after {
+          content: "";
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          right: 15px;
+          bottom: 15px;
+          border-radius: 50%;
+          border: 3px solid transparent;
+          border-top-color: #f9c922;
+
+          -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+            animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+      }
+
+      @-webkit-keyframes spin {
+          0%   { 
+              -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+              -ms-transform: rotate(0deg);  /* IE 9 */
+              transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+          }
+          100% {
+              -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+              -ms-transform: rotate(360deg);  /* IE 9 */
+              transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+          }
+      }
+      @keyframes spin {
+          0%   { 
+              -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+              -ms-transform: rotate(0deg);  /* IE 9 */
+              transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+          }
+          100% {
+              -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+              -ms-transform: rotate(360deg);  /* IE 9 */
+              transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+          }
+      }
+
+
+
+
+
+
+
+
+/*
+  
+  PRELOADER FLY MAN
+
+*/
+
+/*
+
+.body {
+  position: absolute;
+  top: 50%;
+  margin-left: -50px;
+  left: 50%;
+  animation: speeder .4s linear infinite;
+}
+
+.body > span {
+  height: 5px;
+  width: 35px;
+  background: #000;
+  position: absolute;
+  top: -19px;
+  left: 60px;
+  border-radius: 2px 10px 1px 0;
+}
+
+.base span {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-right: 100px solid #000;
+  border-bottom: 6px solid transparent;
+}
+
+.base span:after {
+  content: "";
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  right: -110px;
+  top: -16px;
+}
+
+.base span:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-right: 55px solid #000;
+  border-bottom: 16px solid transparent;
+  top: -16px;
+  right: -98px;
+}
+
+.face {
+  position: absolute;
+  height: 12px;
+  width: 20px;
+  background: #000;
+  border-radius: 20px 20px 0 0;
+  transform: rotate(-40deg);
+  right: -125px;
+  top: -15px;
+}
+
+.face:after {
+  content: "";
+  height: 12px;
+  width: 12px;
+  background: #000;
+  right: 4px;
+  top: 7px;
+  position: absolute;
+  transform: rotate(40deg);
+  transform-origin: 50% 50%;
+  border-radius: 0 0 0 2px;
+}
+
+.body > span > span:nth-child(1),
+.body > span > span:nth-child(2),
+.body > span > span:nth-child(3),
+.body > span > span:nth-child(4){
+  width: 30px;
+  height: 1px;
+  background: #000;
+  position: absolute;
+  animation: fazer1 .2s linear infinite;
+}
+
+.body > span > span:nth-child(2) {
+  top: 3px;
+   animation: fazer2 .4s linear infinite;
+}
+
+.body > span > span:nth-child(3) {
+  top: 1px;
+   animation: fazer3 .4s linear infinite;
+  animation-delay: -1s;
+}
+
+.body > span > span:nth-child(4) {
+  top: 4px;
+   animation: fazer4 1s linear infinite;
+  animation-delay: -1s;
+}
+
+@keyframes fazer1 {0% {left: 0;} 100% {left: -80px;opacity: 0;}}
+
+@keyframes fazer2 {0% {left: 0;} 100% {left: -100px;opacity: 0;}}
+
+@keyframes fazer3 {0% {left: 0;} 100% {left: -50px;opacity: 0;}}
+
+@keyframes fazer4 {0% {left: 0;} 100% {left: -150px;opacity: 0;}}
+
+@keyframes speeder {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -3px) rotate(-1deg); }
+  20% { transform: translate(-2px, 0px) rotate(1deg); }
+  30% { transform: translate(1px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 3px) rotate(-1deg); }
+  60% { transform: translate(-1px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-2px, -1px) rotate(1deg); }
+  90% { transform: translate(2px, 1px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.longfazers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.longfazers span {
+  position: absolute;
+  height: 2px;
+  width: 20%;
+  background: #000;
+}
+
+.longfazers span:nth-child(1) {
+  top: 20%;
+  animation: lf .6s linear infinite;
+  animation-delay: -5s;
+}
+
+.longfazers span:nth-child(2) {
+  top: 40%;
+  animation: lf2 .8s linear infinite; 
+  animation-delay: -1s;
+}
+
+.longfazers span:nth-child(3) {
+  top: 60%;
+  animation: lf3 .6s linear infinite; 
+}
+
+.longfazers span:nth-child(4) {
+  top: 80%;
+  animation: lf4 .5s linear infinite; 
+  animation-delay: -3s;
+}
+
+@keyframes lf {0% {left: 200%;} 100% {left: -200%;opacity: 0;}}
+@keyframes lf2 {0% {left: 200%;} 100% {left: -200%;opacity: 0;}}
+@keyframes lf3 {0% {left: 200%;} 100% {left: -100%;opacity: 0;}}
+@keyframes lf4 {0% {left: 200%;} 100% {left: -100%;opacity: 0;}}
+
+
+
+
+
+
+*/
+
+
+
+
+
+/*
+  
+  PRELOADER circls
+
+*/
+
+
+.preloader2 {
+
+   width:72px;
+   height:8px;
+   display:inline-block;
+   padding:0px;
+   text-align:left;
+}
+.preloader2 span {
+   position:absolute;
+   display:inline-block;
+   width:8px;
+   height:8px;
+   border-radius:100%;
+   background:#000000;
+   opacity:0.2;
+   -webkit-animation:preloader21 2s linear infinite alternate;
+   animation:preloader21 2s linear infinite alternate;
+}
+.preloader2 span:nth-child(2) {animation-name:preloader22;-webkit-animation-name:preloader22;}
+.preloader2 span:nth-child(3) {animation-name:preloader23;-webkit-animation-name:preloader23;}
+.preloader2 span:nth-child(4) {animation-name:preloader24;-webkit-animation-name:preloader24;}
+.preloader2 span:nth-child(5) {animation-name:preloader25;-webkit-animation-name:preloader25;}
+@keyframes preloader21 {
+   0% {margin-left:0px;}
+   50% {margin-left:64px;}
+   100% {margin-left:64px;}
+}
+@-webkit-keyframes preloader21 {
+   0% {margin-left:0px;}
+   50% {margin-left:64px;}
+   100% {margin-left:64px;}
+}
+@keyframes preloader22 {
+   0% {margin-left:0px;}
+   37.5% {margin-left:48px;}
+   87.5% {margin-left:48px;}
+   100% {margin-left:64px;}
+}
+@-webkit-keyframes preloader22 {
+   0% {margin-left:0px;}
+   37.5% {margin-left:48px;}
+   87.5% {margin-left:48px;}
+   100% {margin-left:64px;}
+}
+@keyframes preloader23 {
+   0% {margin-left:0px;}
+   25% {margin-left:32px;}
+   75% {margin-left:32px;}
+   100% {margin-left:64px;}
+}
+@-webkit-keyframes preloader23 {
+   0% {margin-left:0px;}
+   25% {margin-left:32px;}
+   75% {margin-left:32px;}
+   100% {margin-left:64px;}
+}
+@keyframes preloader24 {
+   0% {margin-left:0px;}
+   12.5% {margin-left:16px;}
+   62.5% {margin-left:16px;}
+   100% {margin-left:64px;}
+}
+@-webkit-keyframes preloader24 {
+   0% {margin-left:0px;}
+   12.5% {margin-left:16px;}
+   62.5% {margin-left:16px;}
+   100% {margin-left:64px;}
+}
+@keyframes preloader25 {
+   0% {margin-left:0px;}
+   50% {margin-left:0px;}
+   100% {margin-left:64px;}
+}
+@-webkit-keyframes preloader25 {
+   0% {margin-left:0px;}
+   50% {margin-left:0px;}
+   100% {margin-left:64px;}
+}
+
+
+
+
+/****************************
+  ANIMATIONS
+*****************************/
+@keyframes clockwise
+{
+  to {transform: rotate(360deg) translatez(0);}
+}
+
+@keyframes counter-clockwise
+{
+  to {transform: rotate(-360deg) translatez(0);}
+}
+
+@keyframes bounce
+{
+  50%  {transform: translatey(-20px);}
+  100% {transform: translatey( 20px);}
+}
+
+@keyframes zoom
+{
+  to {
+    width: calc(250px + 20px);
+    margin-left: calc(-125px - 10px);
+    margin-top: calc(-125px - 10px);
+    border-width: 10px;
+    border-color: hsla(0, 0%, 100%, 1);
+  }
+}
+
+@keyframes follow
+{
+    0% { transform: translatex(-45px); }
+  100% { transform: translatex( 60px); }
+}
+
+/****************************
+  MAGIC SPINNER
+*****************************/
+.magic {
+  background-color: transparent;
+  width:  10px;
+  height: 10px;
+  border-radius: 100%;
+  box-shadow:
+     12px -12px 0      hsla(0, 0%, 100%, 0.125),
+     17px     0 0 -1px hsla(0, 0%, 100%, 0.250),
+     12px  12px 0 -2px hsla(0, 0%, 100%, 0.375),
+        0  17px 0 -3px hsla(0, 0%, 100%, 0.500),
+    -12px  12px 0 -4px hsla(0, 0%, 100%, 0.625),
+    -17px     0 0 -5px hsla(0, 0%, 100%, 0.750),
+    -12px -12px 0 -6px hsla(0, 0%, 100%, 0.875),
+        0 -17px 0 -7px hsla(0, 0%, 100%, 1.000);
+  animation: clockwise 0.75s steps(8, end) infinite;
+}
+
+/****************************
+  DOT SPINNER
+*****************************/
+.spin {
+  background-color: transparent;
+  width:  10px;
+  height: 10px;
+  border-radius: 100%;
+  box-shadow:
+     12px -12px hsla(0, 0%, 100%, 0.125),
+     17px     0 hsla(0, 0%, 100%, 0.250),
+     12px  12px hsla(0, 0%, 100%, 0.375),
+        0  17px hsla(0, 0%, 100%, 0.500),
+    -12px  12px hsla(0, 0%, 100%, 0.625),
+    -17px     0 hsla(0, 0%, 100%, 0.750),
+    -12px -12px hsla(0, 0%, 100%, 0.875),
+        0 -17px hsla(0, 0%, 100%, 1.000);
+  animation: clockwise 0.75s steps(8, end) infinite;
+}
+
+/****************************
+  LINE SPINNER
+*****************************/
+.one {
+  height: 50px;
+  width:  50px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent hsla(0, 0%, 100%, 0.50);
+  border-radius: 100%;
+  animation: clockwise 0.35s linear infinite; 
+}
+
+/****************************
+  TECH SPINNER
+*****************************/
+.multi {
+  height: 50px;
+  width:  50px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent hsla(0, 0%, 100%, 0.25) transparent hsla(0, 0%, 100%, 0.50);
+  border-radius: 100%;
+  animation: clockwise 1.01s linear infinite;
+}
+
+.multi:after {
+  position: absolute;
+  display: block;
+  top: 5px;
+  right: 5px;
+  height: 30px;
+  width:  30px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: hsla(0, 0%, 100%, 0.50) transparent transparent;
+  border-radius: 100%;
+}
+
+.multi div {
+  position: relative;
+  height: 40px;
+  width:  40px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: hsla(0, 0%, 100%, 0.25) transparent hsla(0, 0%, 100%, 0.5);
+  border-radius: 100%;
+  animation: counter-clockwise 0.49s linear infinite;
+}
+
+.multi div:after {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width:  30px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent hsla(0, 0%, 100%, 0.25) ;
+  border-radius: 100%;
+}
+
+/****************************
+  CONICAL SPINNER
+*****************************/
+/* This preloader will eventually use an SVG conical gradient; conical gradients will be available in SVG2. For now, we must use an image. */
+.conical {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA+FJREFUeNq8md1u2zAMhSlZ64BiF3uYPcbeH3uGAQW2mxVtY3EOJhccw58jO5sB1q7tOPx8SEpiCjN/pz9bGSaPC3C+APfXOz7LPN+2Pzz+YXGBxP+kzlubfkZ2v+UMgfcX4zw1BWA5wpRvRcDMbjMKuS+iGc7PKPG/tzC0CICZfbtnnDuUN81xGg2rYuQKClSc+46El5nsFKjjOa6vMZDsUfJnheEGrk2+dUS9ksCUQJVIgUgtCASpVggACnQoX9rJxGan/LJTkosDcRYmBWE1Onv5wSeSHbGagL6DsJOs8lxXMOyM7MUZ7RE1Moip8hvFuISRx6wcR6qWB1EBCHNA7JOJqgEkiIbhbGpxQImSTVGi8NJf0NWeA+dncqQ6+2w2bOYIB4MTKQV3GKuaMQBQlRV1XI6ElgRgQPYuYKQaPYDJQqcCaliqUJbsnDwkG19YVS1rwVUDZVIAL7SsMmo9jA0lvLeuN8vxZUINq5S/hxY5N0Vhxo6jVlEgI4ktiApCuCAlGcC8sGDDSDmuIRdhDQirbGl8E1qUzIssRYp46/vb1U53FVISYjHCaiak/gLpwSQQmaXqcaWLz0q4Or7vah8ECKIEBS/aHBCzxU+k1O7QOmx/Qfty+ur0w2YfB8ji5AUlCpgVsxkDGrIGzyZ+V8fehu3b42afhBoViX3UpwzkHtvTZl/+dXulJdOJaInLwcRxD6+XzX5u9nWzb+P4RVzX1Y6B76NMkezDHOy72F8dvGz2utnzZj/GfZ/H/nlcu4hcYlUkIjDTTx1aDEBY1gXEOnLj+uZ/jT2NJH8UFexNFYYePD/zrSAgHIB0ZZdhO8j+5nf1H4bjO8x+v36OB+JCtSRGZyBW4djrgLkIxxcxhuiJ5HoChmWOMJDAGkLmhAR5E0CrcnoxvpPEDGFVgywSamwle6ZED9RYhfOrSmQ591rE1EVeWwWQnP91QBm2qhYn1gOQ1UlgUqP/ohz0lr/d6AFYy2puSR5wosjqgHTD0WLAcNJbLkmIsVW1ZiEsNSy1kEWVt6bpKEwDACIQz/kedB/1woqT2QUULc0IAcv5SJGelM6sgxINfBaI2bVpk0rwJISVIyVYZWYgXh+NGphMHgQD9R5tXlenD5A1A6EcQdSYgZmF8FRxZ78zMOh1tF1aVXvpSIv2bopkhv4eUoOmeXdatDcLK6Ra8YTj9/qhx1OkewurngChMAQmO01AWE1zGWK9AWEVHXMwBqFqEAChAW5mDDMjO0+oQUCLKVOFZjosSI4cgaEktJA8iUCqlSPoYHgU6GiiaxDtfJkFOZMLR367t34FyFqm9FuAAQC4HVFM/WGI7QAAAABJRU5ErkJggg==');
+  background-position: 50%;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  -webkit-mask: radial-gradient(center, circle contain, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0) 84%, hsla(0, 0%, 0%, 1) 86%, hsla(0, 0%, 0%, 1) 100%) no-repeat 50% border;
+  animation: clockwise 0.75s ease-in-out infinite;
+}
+
+/****************************
+  DOT BOUNCE
+*****************************/
+.bounce div {
+  border-radius: 100%;
+  height: 10px;
+  width: 10px;
+  background-color: hsl(0, 0%, 100%);
+  animation: bounce 1s ease-in-out infinite;
+  position: absolute;
+  top: 0;
+  transform: translatey(20px);
+}
+
+.bounce div:first-of-type {
+  left: -20px;
+  animation-delay: 0.20s;
+}
+
+.bounce div:nth-of-type(2) {
+  animation-delay: 0.10s;
+}
+
+.bounce div:last-of-type {
+  left: 20px;
+}
+
+/****************************
+  iOS STYLE SPINNER
+*****************************/
+.ios {
+  width: 0;
+  height: 0;
+  animation: clockwise 1s steps(8, end) infinite;
+}
+
+.ios div {
+  width: 6px;
+  height: 40px;
+  margin-top: calc(-40px/2);
+  margin-left: calc(-6px/2);
+  position: absolute;
+}
+
+.ios div:before,
+.ios div:after {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 25%;
+}
+
+.ios div:before {
+  border-radius: 6px 6px 0 0;
+  top: 0;
+}
+
+.ios div:after {
+  border-radius: 0 0 6px 6px;
+  bottom: 0;
+}
+
+.ios div:nth-of-type(1):after {
+  background-color: hsla(0, 0%, 100%, 0.625);
+}
+
+.ios div:nth-of-type(2) {
+  transform: rotate(45deg) translatez(0);
+}
+
+.ios div:nth-of-type(2):after {
+  background-color: hsla(0, 0%, 100%, 0.75);
+}
+
+.ios div:nth-of-type(3) {
+  transform: rotate(90deg) translatez(0);
+}
+
+.ios div:nth-of-type(3):after {
+  background-color: hsla(0, 0%, 100%, 0.875);
+}
+
+.ios div:nth-of-type(4) {
+  transform: rotate(135deg) translatez(0);
+}
+
+.ios div:nth-of-type(4):after {
+  background-color: hsla(0, 0%, 100%, 1.0);
+}
+
+/****************************
+  TWO TONE SPINNER
+*****************************/
+.ZWidgetPreloader {
+    display: none;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: rgba(255, 255, 255, 0.75);
+
+    &__two {
+        margin: auto auto;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        height: 30px;
+        width: 30px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgb(255, 174, 73) rgb(243, 243, 243) rgb(243, 243, 243) rgb(243, 243, 243);
+        border-radius: 100%;
+        animation: clockwise .5s linear infinite;
+    }
+
+}
+/****************************
+  PORTAL
+*****************************/
+.portal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.portal > div {
+  position: relative;
+  width: 0;
+  height: 0;
+  align-self: center;
+}
+
+.portal > div > div {
+  position: absolute;
+  width: 0;
+  align-self: center;
+  border-width: 0;
+  border-style: solid;
+  border-color: hsla(0, 0%, 100%, 0);
+  border-radius: 50%;
+  animation: zoom 1s ease-in infinite;
+}
+
+.portal > div > div:after {
+  display: block;
+  padding-top: 100%;
+}
+
+.portal > div > div:nth-of-type(2) {
+  animation-delay: 0.33s;
+}
+
+.portal > div > div:nth-of-type(3) {
+  animation-delay: 0.67s;
+}
+
+/****************************
+  FOLLOW
+*****************************/
+.follow {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.follow div {
+  align-self: center;
+  width: 10px;
+  height: 20px;
+  padding: 2px;
+  background-color:  hsla(0, 0%, 0%, 0.3);
+  box-shadow:
+    -15px 0 0 hsla(0, 0%, 0%, 0.3),
+    -30px 0 0 hsla(0, 0%, 0%, 0.3),
+     15px 0 0 hsla(0, 0%, 0%, 0.3),
+     30px 0 0 hsla(0, 0%, 0%, 0.3);
+}
+
+.follow div > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow:
+    -15px 0 0 hsl(0, 0%, 100%),
+     15px 0 0 hsl(0, 0%, 100%);
+  animation: follow 1s steps(7, end) infinite;
+}

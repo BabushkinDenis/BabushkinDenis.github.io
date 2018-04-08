@@ -1,0 +1,95 @@
+
+
+/*
+    VARS SET
+*/
+    $black: #1c2123;
+    $white: #ffffff;
+   
+    $blue: #05b6e9;
+    $blue-hover: #19738d;
+    $grey: #83a1aa;
+
+    $blue-light: #dbf0f6;
+    $grey-light: #e4ebee;
+
+
+    $blue-dark: #19738d;
+    $grey-dark: #4c6b74;
+
+    $blue-shady: #1199c0; /*Чуть темнее*/
+
+    $grey-pale: #b3c6cc; /*Чуть светлее*/
+    $grey-pale-hover: #4c6b74;
+  
+
+    $green-light: #4caf50;
+    $green-hover: #1b5e20;
+    $green-dark: #1b5e20;
+
+    $red-light: #f44336;
+    $red-hover: #b71c1c;
+    $red-dark: #b71c1c;
+
+
+    $orange: #ff8a00;
+
+/*
+   END VARS SET
+*/
+
+
+/*
+    MIXIN
+*/
+
+    @mixin border-radius($radius) {
+      -webkit-border-radius: $radius;
+         -moz-border-radius: $radius;
+          -ms-border-radius: $radius;
+              border-radius: $radius;
+    }
+
+    @mixin border-radius-no() {
+      -webkit-border-radius: 0px;
+         -moz-border-radius: 0px;
+          -ms-border-radius: 0px;
+              border-radius: 0px;
+    }
+
+
+    @mixin border-radius-left($radius) {
+      -webkit-border-radius: $radius 0px 0px $radius;
+         -moz-border-radius: $radius 0px 0px $radius;
+          -ms-border-radius: $radius 0px 0px $radius;
+              border-radius: $radius 0px 0px $radius;
+    }
+
+    @mixin border-radius-right($radius) {
+      -webkit-border-radius: 0px $radius $radius 0px;
+         -moz-border-radius: 0px $radius $radius 0px;
+          -ms-border-radius: 0px $radius $radius 0px;
+              border-radius: 0px $radius $radius 0px;
+    }
+
+    @mixin box-shadow($HL, $VL , $BR , $SR, $O){
+        -webkit-box-shadow: $HL $VL $BR $SR rgba(0,0,0,$O);
+        -moz-box-shadow: $HL $VL $BR $SR rgba(0,0,0,$O);
+        box-shadow: $HL $VL $BR $SR rgba(0,0,0,$O);
+    }
+
+    @mixin rotate($angle) {
+        -moz-transform: rotate($angle); /* Для Firefox */
+        -ms-transform: rotate($angle); /* Для IE */
+        -webkit-transform: rotate($angle); /* Для Safari, Chrome, iOS */
+        -o-transform: rotate($angle); /* Для Opera */
+        transform: rotate($angle);
+    }
+
+
+/*
+    END MIXIN
+*/
+
+
+

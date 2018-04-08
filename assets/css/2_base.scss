@@ -1,0 +1,237 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+input, textarea {outline:none; font-size:14px;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+input:disabled{background-color:white;}
+input[disabled]{background-color:white;}
+
+
+
+._clearfix:before,
+._clearfix:after {
+    content: '.';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+  }
+
+._clearfix:after,
+._container_24:after {
+    clear: both;
+}
+
+
+._clearfix {
+    zoom: 1;
+}
+
+
+._hidden {
+    display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'icon';
+  src:  url('../fonts/icon/icomoon.eot?1y56eejx');
+  src:  url('../fonts/icon//icomoon.eot?1y56ejex#iefix') format('embedded-opentype'),
+    url('../fonts/icon/icomoon.ttf?1y5j6eex') format('truetype'),
+    url('../fonts/icon/icomoon.woff?1yj56eex') format('woff'),
+    url('../fonts/icon/icomoon.svg?1y5g6eex#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  
+  &:before {
+      font-family: 'icon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+
+.icon-filter:before {
+  content: "\e916";
+}
+
+.icon-navigate:before {
+  content: "\e911";
+}
+.icon-share2:before {
+  content: "\e912";
+}
+.icon-circle:before {
+  content: "\e913";
+}
+.icon-e:before {
+  content: "\e914";
+}
+.icon-dotes:before {
+  content: "\e915";
+}
+
+
+.icon-clock2:before {
+  content: "\e910";
+}
+
+
+.icon-location:before {
+  content: "\e90f";
+}
+
+.icon-share:before {
+  content: "\e903";
+}
+.icon-pin:before {
+  content: "\e904";
+}
+.icon-phone:before {
+  content: "\e905";
+}
+.icon-man:before {
+  content: "\e906";
+}
+.icon-feed-back:before {
+  content: "\e907";
+}
+.icon-f:before {
+  content: "\e908";
+}
+.icon-dollar:before {
+  content: "\e909";
+}
+.icon-clock:before {
+  content: "\e90a";
+}
+.icon-car2:before {
+  content: "\e90b";
+}
+.icon-bag:before {
+  content: "\e90c";
+}
+.icon-route:before {
+  content: "\e90d";
+}
+.icon-search:before {
+  content: "\e90e";
+}
+.icon-car:before {
+  content: "\e900";
+}
+.icon-jeep:before {
+  content: "\e901";
+}
+.icon-moto:before {
+  content: "\e902";
+}
+
+
+.icon-checkmark:before {
+  content: "\ea10";
+}
+
+
+
+.icon_font {
+    font-family: 'icon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+    
+
+    @-webkit-keyframes hilightTouchBtn {
+        0%   { 
+            background: $white;
+            color:$grey-dark;
+        }
+
+        5% { 
+            background:$grey-dark;
+            color:$white;
+        }
+
+        100% {
+            background: $white;
+            color:$grey-dark;
+        }
+    }
+
+    @keyframes hilightTouchBtn {
+        0%   { 
+            background: $white;
+            color:$grey-dark;
+        }
+
+        5% { 
+            background:$grey-dark;
+        }
+
+
+        100% {
+            background: $white;
+            color:$grey-dark;
+        }
+    }
